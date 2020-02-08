@@ -4,6 +4,8 @@ const Introduction = (props: any) => {
   return (
     <>
       <p>
+        <i>Opposing Insights</i>
+        <br />
         <strong>Welcome!</strong>
         <br />
         Thank you for visiting my website and for your time and interest.
