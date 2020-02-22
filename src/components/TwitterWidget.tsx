@@ -33,9 +33,10 @@ const TwitterWidget = (image: any) => {
   return (
     <>
       <div className="twitter-widget-wrapper">
-        {/* Hier komt een TwitterWidget */}
         <div className="twitter-widget-left-wrapper">
-          <div className="twitter-widget-header">Tweet from Pim</div>
+          <div className="twitter-widget-header">
+            <h1>Tweet from Pim</h1>
+          </div>
           <div className="twitter-widget-text" key={Tweets[0].key}>
             {Tweets[0].text} - <a href={Tweets[0].link}>{Tweets[0].link}</a>
           </div>
@@ -56,7 +57,7 @@ const TwitterWidget = (image: any) => {
                 </li>
               );
             })}
-            <a href="bla"></a>
+            {/* <a href="bla"></a> */}
           </ul>
           <a
             id="twitter-widget-follow"

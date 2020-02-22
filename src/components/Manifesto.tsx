@@ -157,9 +157,9 @@ const Manifesto = () => {
   return (
     <>
       <div>
-        <a href="#" className="collapse">
+        {/* <a href="#" className="collapse">
           Collapse
-        </a>
+        </a> */}
         <header>
           <h1>Manifesto</h1>
           <h2>
@@ -172,6 +172,7 @@ const Manifesto = () => {
         <a
           href="http://perspectives.nl/media/WEBSITE_01_MANIFESTO.pdf"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <strong>Download Manifesto</strong>
         </a>
@@ -181,8 +182,11 @@ const Manifesto = () => {
               <li>
                 <div className="manifesto-header" key={item.key}>
                   <strong>{item.header}</strong>
-                  <p>{item.text}</p>
                 </div>
+                <div className="manifesto-text">
+
+                </div>
+                <p>{item.text}</p>
               </li>
             );
           })}

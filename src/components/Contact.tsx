@@ -38,6 +38,7 @@ const Contact = () => {
           id="LinkedInLink"
           href="https://www.linkedin.com/in/pim-van-den-berg-aaa226"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img src={linkedin} alt="LinkedIn" />
         </a>
@@ -45,6 +46,7 @@ const Contact = () => {
           id="FacebookLink"
           href="https://www.facebook.com/pim.vandenberg.336"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img src={facebook} alt="Facebook" />
         </a>
@@ -52,6 +54,7 @@ const Contact = () => {
           id="TwitterLink"
           href="http://twitter.com/pimvandenberg"
           target="_blank"
+          rel="noopener noreferrer"
         >
           <img src={twitter} alt="Facebook" />
         </a>

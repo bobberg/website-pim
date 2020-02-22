@@ -1,6 +1,6 @@
 import React from "react";
 
-const TwitterWidget = (image: any) => {
+const VideoSection = (image: any) => {
   const VimeoLinks = [
     {
       key: 1,
@@ -86,13 +86,18 @@ const TwitterWidget = (image: any) => {
 
   return (
     <>
-      <div>
+      <div className="video-section">
         {VimeoLinks.map(video => {
           return (
             <div key={video.key}>
               <h1>{video.title}</h1>
               {/* <img alt="" src={video.imgsrc} /> */}
-              <iframe src={video.src} width="460" height="258"></iframe>
+              <iframe
+                title={video.title}
+                src={video.src}
+                width="460"
+                height="258"
+              ></iframe>
               {video.text ? video.text : ""}
             </div>
           );
@@ -106,4 +111,4 @@ const TwitterWidget = (image: any) => {
     </>
   );
 };
-export default TwitterWidget;
+export default VideoSection;

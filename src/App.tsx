@@ -1,5 +1,5 @@
 import React from "react";
-import "./scss/index.scss";
+import "./scss";
 import Introduction from "./components/Introduction";
 import Slideshow from "./components/Slideshow";
 import image1 from "./images/image1.jpg";
@@ -15,7 +15,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="App-header"></header>
-      <h1>
+      <h1 className="pimvandenberg">
         <i>Pim van den Berg</i>
       </h1>
       <h2>Perspectives</h2>
