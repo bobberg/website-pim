@@ -11,7 +11,7 @@ const TwitterWidget = (image: any) => {
     {
       key: 2,
       text:
-        "Mooie The forgotten grandeur of Britain's department stores – a historian reflects .",
+        "The forgotten grandeur of Britain's department stores – a historian reflects .",
       link: "https://t.co/hjBWwBZrs2",
       datetime: ""
     },
