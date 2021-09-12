@@ -4,20 +4,20 @@ import pim from "./../images/Pim.jpg";
 const Specialities = [
   {
     key: 1,
-    speciality: "- DNA reseach for cities and organisations"
+    speciality: "- DNA reseach for cities and organisations",
   },
   {
     key: 2,
-    speciality: "- Discovery tours throughout the world"
+    speciality: "- Discovery tours throughout the world",
   },
   {
     key: 3,
-    speciality: "- Innovation and development"
+    speciality: "- Innovation and development",
   },
   {
     key: 4,
-    speciality: "- Inspirational see-throughs/presentations"
-  }
+    speciality: "- Inspirational see-throughs/presentations",
+  },
 ];
 
 const About = () => {
@@ -42,8 +42,8 @@ const About = () => {
             inspiring perspectives of the world we live in.
           </p>
           <p>Specialties:</p>
-          <ul>
-            {Specialities.map(item => {
+          <ul className="about-specialities">
+            {Specialities.map((item) => {
               return (
                 <li className="about-speciality" key={item.key}>
                   {item.speciality}

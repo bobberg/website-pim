@@ -6,32 +6,30 @@ const TwitterWidget = (image: any) => {
       key: 1,
       text: "Mooie ontwikkeling.",
       link: "https://t.co/DmtWWwkVBa",
-      datetime: "29-9-2018 15:39:40"
+      datetime: "29-9-2018 15:39:40",
     },
     {
       key: 2,
-      text:
-        "The forgotten grandeur of Britain's department stores – a historian reflects .",
+      text: "The forgotten grandeur of Britain's department stores – a historian reflects .",
       link: "https://t.co/hjBWwBZrs2",
-      datetime: ""
+      datetime: "",
     },
     {
       key: 3,
-      text:
-        "Haarlemse Orgelweken. Talented students from many cities from our world being inspired by Leo van Doeselaar. Touching a note is all about knowing what you want. Enthusiasm and love for what you do. That creates music that even Bach would like. Great privilege to be part of it.",
+      text: "Haarlemse Orgelweken. Talented students from many cities from our world being inspired by Leo van Doeselaar. Touching a note is all about knowing what you want. Enthusiasm and love for what you do. That creates music that even Bach would like. Great privilege to be part of it.",
       link: "https://t.co/dcYdDSIqh4",
-      datetime: ""
+      datetime: "",
     },
     {
       key: 4,
       text: "Tesco lanceert eigen discounter in strijd tegen Aldi en Lidl",
       link: "https://t.co/WQUiIVrwlH.",
-      datetime: ""
-    }
+      datetime: "",
+    },
   ];
 
   return (
-    <>
+    <div className="section-twitter">
       <div className="twitter-widget-wrapper">
         <div className="twitter-widget-left-wrapper">
           <div className="twitter-widget-header">
@@ -50,7 +48,7 @@ const TwitterWidget = (image: any) => {
         </div>
         <div className="twitter-widget-right-wrapper">
           <ul>
-            {Tweets.map(tweet => {
+            {Tweets.map((tweet) => {
               return (
                 <li className="twitter-widget-tweet" key={tweet.key}>
                   {tweet.text} - <a href={tweet.link}>{tweet.link}</a>
@@ -68,7 +66,7 @@ const TwitterWidget = (image: any) => {
           </a>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 export default TwitterWidget;

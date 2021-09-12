@@ -1,6 +1,11 @@
 .App {
   // text-align: center;
   font-family: Arial, Sans-serif;
+  background-color: #fff;
+  color: #444;
+  margin: 0px auto;
+  max-width: 981px;
+  position: relative;
 }
 
 .App-logo {
@@ -28,14 +33,12 @@
 .App-link {
   color: #61dafb;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.section {
+  padding: 20px 19px 20px 22px;
+}
+.section-twitter {
+  padding: 20px 19px 20px 22px;
+  background-color: #ff9c00;
 }
 .pimvandenberg {
   font-family: Georgia;
@@ -48,7 +51,7 @@
 .twitter-widget-wrapper {
   display: flex;
   flex-wrap: wrap;
-  width: 100vw;
+  width: auto;
   background-color: #ff9c00;
   overflow: hidden;
 }
@@ -77,7 +80,7 @@
 
 .video-section {
   display: flex;
-  width: 100vw;
+  width: auto;
   overflow: scroll;
   background-color: #ff9c00;
 }
@@ -104,19 +107,44 @@
 }
 .about-right {
   float: right;
+  max-width: 619px;
+  font-size: 19px;
+  line-height: 25px;
+}
+.about-right h1 {
+  color: #ff9b00;
+}
+.about-specialities {
+  padding: 0;
 }
 .about-speciality {
   list-style: none;
+}
+.contact {
+  background-color: #f60;
+  color: #000;
+  padding: 20px 19px 20px 22px;
+}
+.contact-heading {
+}
+.contact-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.contact-form {
 }
 .footer {
   background-color: #000;
   height: 95px;
   color: #999;
   display: flex;
+  justify-content: space-between;
 }
 .footer-left {
   padding: 20px;
 }
 .footer-right {
   padding: 20px;
+  float: right;
 }

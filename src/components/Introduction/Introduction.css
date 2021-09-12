@@ -1,0 +1,16 @@
+.introduction-header {
+  font-style: italic;
+  font-family: Georgia;
+  font-size: 20px;
+  line-height: 26px;
+  width: 615px;
+  color: #444;
+}
+
+.introduction-text {
+  font-family: Georgia;
+  color: #444;
+  width: 615px;
+  font-size: 20px;
+  line-height: 26px;
+}
