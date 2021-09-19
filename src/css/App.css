@@ -145,8 +145,34 @@ h2 {
 .assignments-picture {
   float: right;
 }
+.assignments-pdf {
+  padding: 20px 0;
+  font-weight: bold;
+}
+.assignments-pdf a {
+  color: #fff;
+}
 .manifesto-header {
   color: #ff9b00;
+}
+.manifesto-download {
+  padding: 10px 0 20px 0;
+}
+.manifesto-download a {
+  padding: 10px 0 20px 0;
+  /* color: #fff; */
+}
+.manifesto-button {
+  background-color: #ff9b00; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  /* float: right; */
+  justify-content: flex-end;
 }
 .manifesto-text {
   font-family: Georgia, sans-serif;

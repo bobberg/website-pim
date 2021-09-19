@@ -1,12 +1,14 @@
 import React from "react";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import dog from "./../images/dog.jpg";
+// import metpimopstraat from "./media/MetPimOpStraat2009-2013def.pdf";
 
 const Assignments = () => {
   return (
-    <>
+    <Router>
       <div className="assignments-wrapper">
         <div className="assignments-picture">
-        <img src={dog} alt="dog" />
+          <img src={dog} alt="dog" />
         </div>
         <h1>What assignments did Pim have and what's planned next?</h1>
         <h2>Just a flavour of the variety of projects I am working on.</h2>
@@ -14,7 +16,12 @@ const Assignments = () => {
         <p>
           My columns in Foodpersonality since 2009 are included in this site.
         </p>
-        <div>MET PIM OP STRAAT PDF IN MEDIA</div>
+
+        <div className="assignments-pdf">
+          <Link to="/MetPimOpStraat2009-2013def.pdf" target="blank" download>
+            Met Pim op Straat Columns PDF
+          </Link>
+        </div>
         <p>
           Involved in the development of the DNA of 5 cities in the Netherlands
           and a project of investigating the potential of 20 arreas in and near
@@ -62,7 +69,15 @@ const Assignments = () => {
           of transition cities in Detroit, Cleveland, Pittsburgh and
           Philadelphia.
           <br />
-          <div>HIER DE FN OUTLOOK PDF</div>
+          <div className="assignments-pdf">
+            <Link
+              to="/FN_Outlook 2013_p34-37_pimvandenberg.pdf"
+              target="blank"
+              download
+            >
+              FondsNieuws article PDF
+            </Link>
+          </div>
         </p>
         <p>
           Wondering whether I new book about DNA and Cities would add value to
@@ -92,7 +107,7 @@ const Assignments = () => {
           <br />
         </p>
       </div>
-    </>
+    </Router>
   );
 };
 export default Assignments;

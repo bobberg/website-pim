@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { BrowserRouter as Router, Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Manifesto = () => {
   const ManifestoItems = [
@@ -143,6 +144,17 @@ const Manifesto = () => {
           <br />
           Take off those Blinders!
         </h2>
+        <div className="manifesto-download">
+          <Router>
+            <Link
+              to="/FN_Outlook 2013_p34-37_pimvandenberg.pdf"
+              target="blank"
+              download
+            >
+              Download manifesto
+            </Link>
+          </Router>
+        </div>
       </header>
 
       {/* <a
@@ -152,7 +164,10 @@ const Manifesto = () => {
         >
           <strong>Download Manifesto</strong>
         </a> */}
-      <button onClick={() => setIsOpen(isOpen ? false : true)}>
+      <button
+        className="manifesto-button"
+        onClick={() => setIsOpen(isOpen ? false : true)}
+      >
         {isOpen ? "Close Manifest" : "Open Manifest"}
       </button>
       <motion.header
