@@ -153,7 +153,7 @@ const Manifesto = () => {
           <strong>Download Manifesto</strong>
         </a> */}
       <button onClick={() => setIsOpen(isOpen ? false : true)}>
-        Open Manifest
+        {isOpen ? "Close Manifest" : "Open Manifest"}
       </button>
       <motion.header
         initial={false}

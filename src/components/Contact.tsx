@@ -2,7 +2,6 @@ import React from "react";
 import linkedin from "./../images/linkedin.png";
 import facebook from "./../images/facebook.png";
 import twitter from "./../images/twitter.png";
-import { prependOnceListener } from "cluster";
 
 const Contact = () => {
   return (

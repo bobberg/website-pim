@@ -1,8 +1,8 @@
 import React from "react";
-import "./scss";
+import "./css";
 import Introduction from "./components/Introduction";
 import Slideshow from "./components/Slideshow";
-import image1 from "./images/image1.jpg";
+
 import TwitterWidget from "./components/TwitterWidget";
 import VideoSection from "./components/VideoSection";
 import Assignments from "./components/Assignments";
@@ -14,13 +14,17 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      {/* <header className="App-header"></header> */}
+
       <h1 className="pimvandenberg">
         <i>Pim van den Berg</i>
       </h1>
       <h2>Perspectives</h2>
+
+      <div className="slideshow-container">
+        <Slideshow />
+      </div>
       <Introduction />
-      <Slideshow image={image1} />
       <TwitterWidget />
       <VideoSection />
       <Manifesto />
