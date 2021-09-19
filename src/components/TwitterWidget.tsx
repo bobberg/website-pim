@@ -62,7 +62,7 @@ const TwitterWidget = (image: any) => {
             className="twitter-widget-follow"
             href="http://www.twitter.com/pimvandenberg"
           >
-            Follow Pim
+            Follow Pim {">"}
           </a>
         </div>
       </div>
