@@ -180,8 +180,8 @@ const Manifesto = () => {
         <ul>
           {ManifestoItems.map((item) => {
             return (
-              <li>
-                <div className="manifesto-header" key={item.key}>
+              <li key={item.key}>
+                <div className="manifesto-header">
                   <strong>{item.header}</strong>
                 </div>
                 <div className="manifesto-text"></div>

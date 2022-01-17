@@ -69,16 +69,17 @@ const Assignments = () => {
           of transition cities in Detroit, Cleveland, Pittsburgh and
           Philadelphia.
           <br />
-          <div className="assignments-pdf">
-            <Link
-              to="/FN_Outlook 2013_p34-37_pimvandenberg.pdf"
-              target="blank"
-              download
-            >
-              FondsNieuws article PDF
-            </Link>
-          </div>
         </p>
+        <div className="assignments-pdf">
+          <Link
+            to="/FN_Outlook 2013_p34-37_pimvandenberg.pdf"
+            target="blank"
+            download
+          >
+            FondsNieuws article PDF
+          </Link>
+        </div>
+
         <p>
           Wondering whether I new book about DNA and Cities would add value to
           existing volume of information.
