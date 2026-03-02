@@ -217,6 +217,17 @@ h2 {
 }
 .contact-form {
 }
+.contact-details {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4px 12px;
+}
+.contact-details dt {
+  font-weight: bold;
+}
+.contact-details dd {
+  margin: 0;
+}
 .footer {
   background-color: #000;
   height: 95px;

@@ -18,14 +18,14 @@ const Contact = () => {
             <br />
             1181 RR Amstelveen
           </address>
-          <p>
-            Phone: <a href="tel:0206412990">020 6412990</a>
-            <br />
-            Mobile: <a href="tel:0651431255">06 51431255</a>
-            <br />
-            E-mail:{" "}
-            <a href="mailto:pimvandenberg@wxs.nl">pimvandenberg@wxs.nl</a>
-          </p>
+          <dl className="contact-details">
+            <dt>Phone</dt>
+            <dd><a href="tel:0206412990">020 6412990</a></dd>
+            <dt>Mobile</dt>
+            <dd><a href="tel:0651431255">06 51431255</a></dd>
+            <dt>E-mail</dt>
+            <dd><a href="mailto:pimvandenberg@wxs.nl">pimvandenberg@wxs.nl</a></dd>
+          </dl>
         </div>
 
         <div>
