@@ -162,10 +162,7 @@ const Manifesto = () => {
         >
           <strong>Download Manifesto</strong>
         </a> */}
-      <button
-        className="manifesto-button"
-        onClick={() => setIsOpen(!isOpen)}
-      >
+      <button className="manifesto-button" onClick={() => setIsOpen(!isOpen)}>
         {isOpen ? "Close Manifest" : "Open Manifest"}
       </button>
       <motion.header

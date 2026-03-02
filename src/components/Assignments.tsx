@@ -17,7 +17,12 @@ const Assignments = () => {
         </p>
 
         <div className="assignments-pdf">
-          <a href="/MetPimOpStraat2009-2013def.pdf" target="_blank" rel="noopener noreferrer" download>
+          <a
+            href="/MetPimOpStraat2009-2013def.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+          >
             Met Pim op Straat Columns PDF
           </a>
         </div>
