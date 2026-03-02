@@ -138,11 +138,8 @@ const Manifesto = () => {
         </a> */}
       <header>
         <h1>Manifesto</h1>
-        <h2>
-          Pim van den Berg’s Manifesto on The Future of Streetology
-          <br />
-          Take off those Blinders!
-        </h2>
+        <h2>Pim van den Berg’s Manifesto on The Future of Streetology</h2>
+        <h3>Take off those Blinders!</h3>
         <div className="manifesto-download">
           <a
             href="/FN_Outlook 2013_p34-37_pimvandenberg.pdf"
@@ -185,10 +182,7 @@ const Manifesto = () => {
             );
           })}
           <li>
-            <p>
-              In close cooperation with Rob Smelt
-              <br />i <a href="http://www.smelten.nl/">www.smelten.nl</a>
-            </p>
+            <p>In close cooperation with Rob Smelt</p>
           </li>
         </ul>
       </motion.header>

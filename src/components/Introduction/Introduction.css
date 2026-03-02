@@ -14,3 +14,19 @@
   font-size: 20px;
   line-height: 26px;
 }
+
+.introduction-text h3 {
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
+}
+
+.introduction-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0.5em 0;
+}
+
+.introduction-list li::before {
+  content: "– ";
+  color: #ff9b00;
+}

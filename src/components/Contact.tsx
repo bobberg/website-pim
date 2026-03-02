@@ -10,29 +10,26 @@ const Contact = () => {
       <div className="contact-section">
         <div className="contact-form"></div>
         <div>
-          <h1>Address</h1>
-          <p>
+          <h2>Address</h2>
+          <address>
             Pim van den Berg Perspectives BV
             <br />
             Charlotte van Montpensierlaan 2c
             <br />
             1181 RR Amstelveen
-          </p>
-
-          <br />
+          </address>
           <p>
-            Phone: 020 6412990
+            Phone: <a href="tel:0206412990">020 6412990</a>
             <br />
-            Fax: 020 6407479
+            Mobile: <a href="tel:0651431255">06 51431255</a>
             <br />
-            Mobile: 06 51431255
-            <br />
-            E-mail: pimvandenberg@wxs.nl
+            E-mail:{" "}
+            <a href="mailto:pimvandenberg@wxs.nl">pimvandenberg@wxs.nl</a>
           </p>
         </div>
 
         <div>
-          <h1>Follow Pim</h1>
+          <h2>Follow Pim</h2>
           <p>
             I actually prefer genuine contact, but you can also connect to me in
             different ways

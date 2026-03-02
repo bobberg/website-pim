@@ -2,22 +2,10 @@ import React from "react";
 import pim from "./../images/Pim.jpg";
 
 const Specialities = [
-  {
-    key: 1,
-    speciality: "- DNA reseach for cities and organisations",
-  },
-  {
-    key: 2,
-    speciality: "- Discovery tours throughout the world",
-  },
-  {
-    key: 3,
-    speciality: "- Innovation and development",
-  },
-  {
-    key: 4,
-    speciality: "- Inspirational see-throughs/presentations",
-  },
+  "DNA research for cities and organisations",
+  "Discovery tours throughout the world",
+  "Innovation and development",
+  "Inspirational see-throughs/presentations",
 ];
 
 const About = () => {
@@ -29,27 +17,23 @@ const About = () => {
         </div>
         <div className="about-right">
           <h1>Who am I?</h1>
+          <p>I am Pim van den Berg and thank you for visiting my website.</p>
           <p>
-            I am Pim van den Berg and thank you for visiting my website.
-            <br />
             My approach is based on streetology. A curious way of understanding
             the now in all its details by connecting with people and their
-            stories.
-            <br />
-            With a focus on Brands, Organisations, People and Cities.
-            <br />
+            stories. With a focus on Brands, Organisations, People and Cities.
+          </p>
+          <p>
             My background in Food and Retail helps me with looking for the broad
             inspiring perspectives of the world we live in.
           </p>
-          <p>Specialties:</p>
+          <h3>Specialties:</h3>
           <ul className="about-specialities">
-            {Specialities.map((item) => {
-              return (
-                <li className="about-speciality" key={item.key}>
-                  {item.speciality}
-                </li>
-              );
-            })}
+            {Specialities.map((item, index) => (
+              <li className="about-speciality" key={index}>
+                {item}
+              </li>
+            ))}
           </ul>
         </div>
       </div>
