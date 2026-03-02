@@ -50,7 +50,6 @@ const VideoSection = () => {
                   height="258"
                   loading="lazy"
                   allow="autoplay; fullscreen; picture-in-picture"
-                  allowFullScreen
                 ></iframe>
               </div>
               <div className="video-description">
