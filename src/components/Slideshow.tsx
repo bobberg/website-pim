@@ -1,8 +1,13 @@
 import * as React from "react";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { wrap } from "popmotion";
 import { images } from "./image-data";
+
+/** Wraps a value into a range (replaces popmotion's wrap) */
+const wrap = (min: number, max: number, v: number): number => {
+  const rangeSize = max - min;
+  return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
+};
 
 const variants = {
   enter: (direction: number) => {
@@ -86,10 +91,10 @@ const Slideshow = () => {
           }}
         />
       </AnimatePresence>
-      <div className="next" onClick={() => paginate(1)}>
+      <div className="next" onClick={() => paginate(1)} role="button" aria-label="Next image">
         {"‣"}
       </div>
-      <div className="prev" onClick={() => paginate(-1)}>
+      <div className="prev" onClick={() => paginate(-1)} role="button" aria-label="Previous image">
         {"‣"}
       </div>
     </>

@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer-left">
-        All rights reserved by perspectives bv 2019©
+        All rights reserved by perspectives bv {new Date().getFullYear()}&copy;
       </div>
       <div className="footer-right">Created by Bob van den Berg</div>
     </footer>

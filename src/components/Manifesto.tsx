@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Manifesto = () => {
@@ -145,15 +144,14 @@ const Manifesto = () => {
           Take off those Blinders!
         </h2>
         <div className="manifesto-download">
-          <Router>
-            <Link
-              to="/FN_Outlook 2013_p34-37_pimvandenberg.pdf"
-              target="blank"
-              download
-            >
-              Download manifesto
-            </Link>
-          </Router>
+          <a
+            href="/FN_Outlook 2013_p34-37_pimvandenberg.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+          >
+            Download manifesto
+          </a>
         </div>
       </header>
 
@@ -166,7 +164,7 @@ const Manifesto = () => {
         </a> */}
       <button
         className="manifesto-button"
-        onClick={() => setIsOpen(isOpen ? false : true)}
+        onClick={() => setIsOpen(!isOpen)}
       >
         {isOpen ? "Close Manifest" : "Open Manifest"}
       </button>

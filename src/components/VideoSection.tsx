@@ -1,6 +1,6 @@
 import React from "react";
 
-const VideoSection = (image: any) => {
+const VideoSection = () => {
   const VimeoLinks = [
     {
       key: 1,
@@ -48,6 +48,9 @@ const VideoSection = (image: any) => {
                   src={video.src}
                   width="460"
                   height="258"
+                  loading="lazy"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
                 ></iframe>
               </div>
               <div className="video-description">
@@ -58,7 +61,7 @@ const VideoSection = (image: any) => {
         })}
       </div>
       <div className="video-watch-all">
-        <a href="http://vimeo.com/user5585500">
+        <a href="https://vimeo.com/user5585500">
           Watch all videos on <span className="vimeo">vimeo</span>
         </a>
       </div>

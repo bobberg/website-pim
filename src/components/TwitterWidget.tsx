@@ -1,6 +1,6 @@
 import React from "react";
 
-const TwitterWidget = (image: any) => {
+const TwitterWidget = () => {
   const Tweets = [
     {
       key: 1,
@@ -60,7 +60,7 @@ const TwitterWidget = (image: any) => {
           <a
             id="twitter-widget-follow"
             className="twitter-widget-follow"
-            href="http://www.twitter.com/pimvandenberg"
+            href="https://www.twitter.com/pimvandenberg"
           >
             Follow Pim {">"}
           </a>

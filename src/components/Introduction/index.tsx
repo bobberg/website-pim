@@ -1,6 +1,6 @@
 import React from "react";
 import "./Introduction.css";
-const Introduction = (props: any) => {
+const Introduction = () => {
   return (
     <div className="section">
       <i className="introduction-header">Opposing Insights</i>

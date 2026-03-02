@@ -1,11 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
 import dog from "./../images/dog.jpg";
 // import metpimopstraat from "./media/MetPimOpStraat2009-2013def.pdf";
 
 const Assignments = () => {
   return (
-    <Router>
+    <>
       <div className="assignments-wrapper">
         <div className="assignments-picture">
           <img src={dog} alt="dog" />
@@ -18,9 +17,9 @@ const Assignments = () => {
         </p>
 
         <div className="assignments-pdf">
-          <Link to="/MetPimOpStraat2009-2013def.pdf" target="blank" download>
+          <a href="/MetPimOpStraat2009-2013def.pdf" target="_blank" rel="noopener noreferrer" download>
             Met Pim op Straat Columns PDF
-          </Link>
+          </a>
         </div>
         <p>
           Involved in the development of the DNA of 5 cities in the Netherlands
@@ -71,13 +70,14 @@ const Assignments = () => {
           <br />
         </p>
         <div className="assignments-pdf">
-          <Link
-            to="/FN_Outlook 2013_p34-37_pimvandenberg.pdf"
-            target="blank"
+          <a
+            href="/FN_Outlook 2013_p34-37_pimvandenberg.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             download
           >
             FondsNieuws article PDF
-          </Link>
+          </a>
         </div>
 
         <p>
@@ -108,7 +108,7 @@ const Assignments = () => {
           <br />
         </p>
       </div>
-    </Router>
+    </>
   );
 };
 export default Assignments;

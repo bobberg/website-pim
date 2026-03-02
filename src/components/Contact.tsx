@@ -55,11 +55,11 @@ const Contact = () => {
           </a>
           <a
             id="TwitterLink"
-            href="http://twitter.com/pimvandenberg"
+            href="https://twitter.com/pimvandenberg"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={twitter} alt="Facebook" />
+            <img src={twitter} alt="Twitter" />
           </a>
         </div>
       </div>
