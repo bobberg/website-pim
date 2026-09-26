@@ -1,88 +1,87 @@
-import * as React from "react";
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { images } from "./image-data";
 
-/** Wraps a value into a range (replaces popmotion's wrap) */
-const wrap = (min: number, max: number, v: number): number => {
-  const rangeSize = max - min;
-  return ((((v - min) % rangeSize) + rangeSize) % rangeSize) + min;
-};
+const Chevron = ({ direction }: { direction: "left" | "right" }) => (
+  <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+    <path
+      d={direction === "left" ? "M15 5l-7 7 7 7" : "M9 5l7 7-7 7"}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
 
-const variants = {
-  enter: (direction: number) => ({
-    x: direction > 0 ? "100%" : "-100%",
-  }),
-  center: {
-    zIndex: 1,
-    x: 0,
-  },
-  exit: (direction: number) => ({
-    zIndex: 0,
-    x: direction < 0 ? "100%" : "-100%",
-  }),
-};
-
-const swipeConfidenceThreshold = 10000;
-const swipePower = (offset: number, velocity: number) => {
-  return Math.abs(offset) * velocity;
-};
-
+// Native scroll-snap carousel: swipe/trackpad/keyboard work out of the box.
 const Slideshow = () => {
-  const [[page, direction], setPage] = useState([0, 0]);
+  const trackRef = useRef<HTMLUListElement>(null);
+  const [index, setIndex] = useState(0);
 
-  const imageIndex = wrap(0, images.length, page);
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
+    const onScroll = () =>
+      setIndex(Math.round(track.scrollLeft / track.clientWidth));
+    track.addEventListener("scroll", onScroll, { passive: true });
+    return () => track.removeEventListener("scroll", onScroll);
+  }, []);
 
-  const paginate = (newDirection: number) => {
-    setPage([page + newDirection, newDirection]);
+  const goTo = (target: number) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const wrapped = (target + images.length) % images.length;
+    track.scrollTo({ left: wrapped * track.clientWidth });
   };
 
   return (
-    <>
-      <AnimatePresence initial={false} custom={direction}>
-        <motion.img
-          className="slideshow-image"
-          key={page}
-          src={images[imageIndex]}
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{
-            x: { type: "spring", stiffness: 300, damping: 30 },
-          }}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          dragElastic={1}
-          onDragEnd={(_e: any, { offset, velocity }: any) => {
-            const swipe = swipePower(offset.x, velocity.x);
-
-            if (swipe < -swipeConfidenceThreshold) {
-              paginate(1);
-            } else if (swipe > swipeConfidenceThreshold) {
-              paginate(-1);
-            }
-          }}
-        />
-      </AnimatePresence>
-      <div
-        className="next"
-        onClick={() => paginate(1)}
-        role="button"
-        aria-label="Next image"
+    <section
+      className="slideshow"
+      aria-roledescription="carousel"
+      aria-label="Photo impressions by Pim"
+    >
+      <ul className="slideshow-track" ref={trackRef} tabIndex={0}>
+        {images.map((image, i) => (
+          <li
+            key={image.src}
+            className="slideshow-slide"
+            aria-roledescription="slide"
+            aria-label={`${i + 1} of ${images.length}`}
+          >
+            <img
+              src={image.src}
+              alt={image.alt}
+              width={940}
+              height={625}
+              loading={i === 0 ? "eager" : "lazy"}
+              decoding={i === 0 ? "sync" : "async"}
+              draggable={false}
+            />
+          </li>
+        ))}
+      </ul>
+      <button
+        type="button"
+        className="slideshow-button slideshow-prev"
+        onClick={() => goTo(index - 1)}
+        aria-label="Previous photo"
       >
-        {"‣"}
-      </div>
-      <div
-        className="prev"
-        onClick={() => paginate(-1)}
-        role="button"
-        aria-label="Previous image"
+        <Chevron direction="left" />
+      </button>
+      <button
+        type="button"
+        className="slideshow-button slideshow-next"
+        onClick={() => goTo(index + 1)}
+        aria-label="Next photo"
       >
-        {"‣"}
-      </div>
-    </>
+        <Chevron direction="right" />
+      </button>
+      <p className="slideshow-counter" aria-hidden="true">
+        {String(index + 1).padStart(2, "0")}
+        <span> / {String(images.length).padStart(2, "0")}</span>
+      </p>
+    </section>
   );
 };
 export default Slideshow;

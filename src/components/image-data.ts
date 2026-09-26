@@ -14,20 +14,21 @@ import image12 from "../images/image12.jpg";
 import image13 from "../images/image13.jpg";
 import image14 from "../images/image14.jpg";
 
-export const images = [
-    image1,
-    image2,
-    image3,
-    image4,
-    image5,
-    image6,
-    image7,
-    image8,
-    image9,
-    image10,
-    image11,
-    image12,
-    image13,
-    image14,
-  ];
-  
+export type Slide = { src: string; alt: string };
+
+export const images: Slide[] = [
+  { src: image1, alt: "A protester with slogans painted on his bare chest at a street demonstration" },
+  { src: image2, alt: "A torn chain-link fence framing a view of new apartment blocks" },
+  { src: image3, alt: "St Paul's Cathedral seen from the Millennium Bridge in London" },
+  { src: image4, alt: "A flock of birds circling above an elevated walkway on the edge of a city" },
+  { src: image5, alt: "A crowd of men, some carrying rifles, walking down a street" },
+  { src: image6, alt: "A newly built row of traditional-style townhouses on open land" },
+  { src: image7, alt: "A man relaxing in a hammock behind the open window of a brick apartment" },
+  { src: image8, alt: "Crowds on the lawn during a concert at the Jay Pritzker Pavilion in Chicago" },
+  { src: image9, alt: "Shoppers browsing packed racks in a fashion store" },
+  { src: image10, alt: "A market vendor holding up grapes at a stall piled high with fruit" },
+  { src: image11, alt: "Skyscrapers under construction, with cranes on the skyline" },
+  { src: image12, alt: "A clothing aisle in an Action discount store" },
+  { src: image13, alt: "Sign in Chinese and English: people come together in cities in order to live; they stay there to live well" },
+  { src: image14, alt: "Sign with a Gandhi quote in Hindi and English: for my material needs my village is my world, for my spiritual needs the whole world is my village" },
+];
