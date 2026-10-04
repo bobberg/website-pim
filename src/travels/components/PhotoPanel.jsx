@@ -39,7 +39,10 @@ const Preview = ({ src, alt, className, fallback = "No preview" }) => {
 const Pictograms = ({ photo, trip, onSelectPhoto }) => {
   const stripRef = useRef(null);
   const index = trip.photos.indexOf(photo);
-  const start = Math.max(0, Math.min(index - STRIP_WINDOW / 2, trip.photos.length - STRIP_WINDOW));
+  const start = Math.max(
+    0,
+    Math.min(index - STRIP_WINDOW / 2, trip.photos.length - STRIP_WINDOW),
+  );
   const shown = trip.photos.slice(start, start + STRIP_WINDOW);
 
   // Scrolls only the strip itself, so the page or panel never jumps
@@ -49,7 +52,8 @@ const Pictograms = ({ photo, trip, onSelectPhoto }) => {
     if (current) {
       const stripBox = strip.getBoundingClientRect();
       const box = current.getBoundingClientRect();
-      strip.scrollLeft += box.left - stripBox.left - (stripBox.width - box.width) / 2;
+      strip.scrollLeft +=
+        box.left - stripBox.left - (stripBox.width - box.width) / 2;
     }
   }, [photo]);
 
@@ -79,7 +83,14 @@ const Pictograms = ({ photo, trip, onSelectPhoto }) => {
   );
 };
 
-const Viewer = ({ photo, trip, hasPrevious, hasNext, onStep, onSelectPhoto }) => (
+const Viewer = ({
+  photo,
+  trip,
+  hasPrevious,
+  hasNext,
+  onStep,
+  onSelectPhoto,
+}) => (
   <div className="viewer">
     <div className="preview-frame">
       <Preview
@@ -107,7 +118,9 @@ const Viewer = ({ photo, trip, hasPrevious, hasNext, onStep, onSelectPhoto }) =>
             Google Maps ↗
           </a>
           {placementNotes[photo.placed] && (
-            <span className="placement-note">{placementNotes[photo.placed]}</span>
+            <span className="placement-note">
+              {placementNotes[photo.placed]}
+            </span>
           )}
         </dd>
       </div>

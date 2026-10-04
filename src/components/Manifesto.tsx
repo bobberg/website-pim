@@ -1,4 +1,5 @@
 import { useRef, useState, type ReactNode } from "react";
+import { useLang } from "../i18n";
 
 type Principle = { title: string; text: ReactNode };
 
@@ -113,12 +114,150 @@ const Principles: Principle[] = [
   },
 ];
 
+const PrinciplesNl: Principle[] = [
+  {
+    title: "Contact dat je raakt",
+    text: "Eén op één, oog in oog, het moment en de boodschap. Een ontmoeting van hoofd én hart moet weer een centraal ingrediënt van marketing worden. Waar mensen ontmoeten de ware kunst is.",
+  },
+  {
+    title: "Stel opnieuw scherp en kijk met nieuwe ogen",
+    text: (
+      <>
+        Successen worden niet behaald door financiële meesters, ook al eisen
+        zij ze vaak op. Een succes is een kans die werkelijkheid wordt. En
+        overal liggen kansen te wachten om benut te worden. Kijk goed, en{" "}
+        <em>met nieuwe ogen</em>: juist dan lukt het vaak om ze voor je te laten
+        werken.
+      </>
+    ),
+  },
+  {
+    title: "Jezelf worden",
+    text: "Mensen zijn tegenwoordig verbonden en genetwerkt; wat ze zelf nog niet ontdekt hebben, kunnen ze van anderen leren. Wezenlijke kennis ontstaat in gesprek en discussie. Alle eisen om alert en scherp te zijn maken het des te belangrijker dat je helder ziet, zegt wat je bedoelt en wordt wie je bent. Er is niets mooiers dan evolutie.",
+  },
+  {
+    title: "Zien, ontdekken, beleven",
+    text: "De trend om “brood en spelen” als content aan te bieden, verpakt als “beleving”, houdt aan. Het product en de film. Het product en de musical. De voorstelling en de masterclass. Het thema van een evenement is steeds vaker een betekenisvolle en het liefst onvergetelijke ontmoeting. Maar de meerwaarde van ‘content’ ontstaat pas als de ‘levering’ wordt beleefd.",
+  },
+  {
+    title: "Blije verwondering",
+    text: "Mijn open blik heeft me al die jaren goed gediend. Ik kijk natuurlijk naar alles om me heen, maar vooral naar mensen: hun positie, houding en gedrag in hun wereld. Ik maak met mijn ogen contact met ze, en dat is zonder twijfel mijn mooiste ontdekking, een die ik koester. Ik wens iedereen toe zo zijn ogen te openen.",
+  },
+  {
+    title: "Bouw verhalen rond gevoel",
+    text: "Succes komt met vriendschap. Een verhaal dat om gevoel draait, komt hard aan. De toon en de huisstijl, uitgedrukt in woorden en ritmes, vormen en beelden, houding en gedrag, bepalen hoe oprecht en duurzaam onze vriendschappen zijn.",
+  },
+  {
+    title: "Kom dichtbij",
+    text: "Marketing doe je niet op afstand, en ook niet alleen op basis van ratio. Marketing gebeurt op je stoep, op straat, op markten en andere ontmoetingsplekken. Alleen daar kom je de mensen tegen die je product of dienst kunnen zien, voelen, proeven, overwegen en kopen. Kom dichtbij! Kijk ze in de ogen, let op hun gezichtsuitdrukking en lichaamstaal. Luister naar wat ze zeggen en naar wat ze niet zeggen. En ga daarmee aan de slag.",
+  },
+  {
+    title: "Ga de diepte in",
+    text: "Oppervlakkigheid is geen optie. Kwaliteit is de maat, met alles wat daarbij hoort: kennis, vakmanschap, inspiratie, motivatie en gezonde trots. Uit die diepste bronnen komen eigenheid, kracht en zelfvertrouwen. Anders kunnen we het niet.",
+  },
+  {
+    title: "Geef alles",
+    text: "Soms – eigenlijk best vaak – draait het erom dat je alles geeft voor de taak die voor je ligt: al je zelfvertrouwen, energie en optimisme. Als een organisatie een klimaat van vertrouwen schept, komen ‘esprit de corps’ en teamwerk vanuit het hart en bloeien ze op.",
+  },
+  {
+    title: "Stel de juiste vragen",
+    text: "De eenvoudigste vragen zijn vaak de belangrijkste: wie, wat, waarom, wanneer, hoe voel je je, ben je tevreden en zou je het opnieuw doen als je de kans had? Mensen reageren graag op iemand die oprecht geïnteresseerd is. Zo makkelijk kan schatgraven zijn.",
+  },
+  {
+    title: "Ware kleuren",
+    text: "Op elke straathoek worden we bestookt met marketing, waardoor kleurrijke straten saaie doorgangen worden. Wat echt telt voor het succes van een merk, is een marketingstrategie met boodschappen die overeind blijven door hun diversiteit, consistentie en authenticiteit.",
+  },
+  {
+    title: "Laat je VOICE horen!",
+    text: "Steeds meer mensen keren slimme marketingstrategieën de rug toe. Dat is geen trend maar een massabeweging. VOICE = zeg wat je bedoelt, in je eigen woorden: wees expressief en verbeeldingsrijk.",
+  },
+  {
+    title: "Wat goed is, en wat goed voelt",
+    text: "Bedrijven en instellingen moeten hun klanten ervan overtuigen dat ze op hun gevoel kunnen vertrouwen. Als iets goed voelt, is het dat meestal ook, en er is niets beters dan dat. Ja, die eerste verbinding en reactie op je buikgevoel is vaak ‘voor altijd’.",
+  },
+  {
+    title: "De kunst van het leven",
+    text: "Wie zich goed wil blijven voelen en wil genieten van de Kunst van het Leven, moet eerst de Kunst van het Geven beheersen. Dat is makkelijker gezegd dan gedaan, want het vraagt een investering in tijd, moeite en geld. En van jezelf.",
+  },
+  {
+    title: "Omarm de details",
+    text: "Het grote geheel bestaat uit vele punten en lijnen. Zonder de details kun je het grote geheel net zo goed vergeten. Ironisch genoeg geldt: hoe lager mensen in de organisatie zitten, hoe belangrijker de details van wat ze doen en hoe ze het doen. Hier en nergens anders wordt de reputatie van je organisatie, product of merk bepaald.",
+  },
+  {
+    title: "Investeer in interne kracht",
+    text: "Impact naar buiten komt voort uit kracht van binnen. Investeer in interne kracht, eenheid en verbinding, inspiratie en motivatie, erkenning en waardering. Dat is ook de beste investering in duurzame impact naar buiten. Als mensen groeien, bloeien hun ondernemingen.",
+  },
+  {
+    title: "Leiders met toekomst",
+    text: "Leiders met toekomst nemen genoeg tijd voor CONTACT en emotie: de ontmoeting zelf, spreken én luisteren tussen de regels door – dat geldt voor marketeers en voor de mensen in hun markten.",
+  },
+  {
+    title: "Wortels en vleugels",
+    text: "Bedrijven die hun DNA miskennen of ontkennen, kunnen onmogelijk het beste halen uit het bereik en de kracht van hun vleugels.",
+  },
+  {
+    title: "Sta open voor unieke cv’s",
+    text: "Durf te werken met mensen die uniek zijn en een kleurrijk cv hebben – avontuurlijk en eigenzinnig. Mensen met gevoel voor esthetiek, die harmonie weten te vinden, en de balans daartussen.",
+  },
+  {
+    title: "Betrouwbaar",
+    text: "Pas op voor hypes die zijn als ballonnen: alleen buitenkant, geen inhoud, en klaar om weg te zweven. Vertrouwen herstellen tussen marketeers en hun doelgroepen is een kwestie van houding, daden en oprechte interesse.",
+  },
+  {
+    title: "Wie zaait, zal oogsten",
+    text: "Als wij niet loyaal zijn aan onze klanten, hun medewerkers en leveranciers, moeten we ook niet rekenen op hun loyaliteit en betrokkenheid. Zo werkt het niet.",
+  },
+  {
+    title: "Het draait om mensen",
+    text: "Oogkleppen af! Verzet je tegen gemakzucht en zet die extra stappen. Wijs arrogantie af en werk vanuit het hart. Wees alert op onverschilligheid… het draait om mensen.",
+  },
+  {
+    title: "Van mens tot mens",
+    text: "Gelijkwaardigheid is essentieel. Merken en marketeers moeten nooit denken dat ze boven hun doelgroepen staan. Opgelegde recepten van marketeers werken niet; hun klanten gaan er niet in mee.",
+  },
+  {
+    title: "Het begint met menselijkheid",
+    text: "Elke dag weet ik één ding zeker: zonder menselijkheid is blijvend succes in het bedrijfsleven ondenkbaar. Wie daar anders over denkt, wordt opgejaagd door zaken als aandeelhouderswaarde en een vreugde van korte duur. Uit een uitgeknepen citroen komt geen sap meer.",
+  },
+  {
+    title: "Vertrouw op jezelf",
+    text: "Wantrouw blauwdrukken, het ‘beproefde recept’. Vertrouw op je scherpe blik voor mensen, hun houding en gedrag. Richt je op het grote geheel, met oog voor detail. En maak van wat je met die nieuwe ogen ziet prestaties waar je met trots op terugkijkt.",
+  },
+];
+
+const Copy = {
+  en: {
+    title: "Take off those blinders!",
+    sub: "Pim van den Berg’s manifesto on the future of streetology.",
+    quote:
+      "Look carefully, and with new eyes. That’s when you’ll be able to make them work for you.",
+    less: "Show fewer principles",
+    all: (n: number) => `Read all ${n} principles`,
+    download: "Download manifesto",
+    meta: "PDF",
+    credit: "In close cooperation with Rob Smelt.",
+  },
+  nl: {
+    title: "Oogkleppen af!",
+    sub: "Het manifest van Pim van den Berg over de toekomst van streetology.",
+    quote: "Kijk goed, en met nieuwe ogen. Dan kun je kansen voor je laten werken.",
+    less: "Toon minder principes",
+    all: (n: number) => `Lees alle ${n} principes`,
+    download: "Download het manifest",
+    meta: "PDF, Engels",
+    credit: "In nauwe samenwerking met Rob Smelt.",
+  },
+};
+
 const PREVIEW_COUNT = 3;
 
 const Manifesto = () => {
+  const lang = useLang();
+  const copy = Copy[lang];
+  const principles = lang === "nl" ? PrinciplesNl : Principles;
   const [isOpen, setIsOpen] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-  const visible = isOpen ? Principles : Principles.slice(0, PREVIEW_COUNT);
+  const visible = isOpen ? principles : principles.slice(0, PREVIEW_COUNT);
 
   const toggle = () => {
     if (isOpen) sectionRef.current?.scrollIntoView();
@@ -135,16 +274,11 @@ const Manifesto = () => {
       <div className="container">
         <header className="section-header manifesto-header">
           <div>
-            <h2 id="manifesto-title">Take off those blinders!</h2>
-            <p className="section-sub">
-              Pim van den Berg’s manifesto on the future of streetology.
-            </p>
+            <h2 id="manifesto-title">{copy.title}</h2>
+            <p className="section-sub">{copy.sub}</p>
           </div>
           <blockquote className="pull-quote">
-            <p>
-              Look carefully, and with new eyes. That’s when you’ll be able to
-              make them work for you.
-            </p>
+            <p>{copy.quote}</p>
           </blockquote>
         </header>
 
@@ -168,24 +302,19 @@ const Manifesto = () => {
             aria-controls="manifesto-principles"
             onClick={toggle}
           >
-            {isOpen
-              ? "Show fewer principles"
-              : `Read all ${Principles.length} principles`}
+            {isOpen ? copy.less : copy.all(principles.length)}
           </button>
           <a
             className="button button-outline"
             href="/WEBSITE_01_MANIFESTO.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            hrefLang="en"
           >
-            Download manifesto <span className="button-meta">PDF</span>
+            {copy.download} <span className="button-meta">{copy.meta}</span>
           </a>
         </div>
-        {isOpen && (
-          <p className="manifesto-credit">
-            In close cooperation with Rob Smelt.
-          </p>
-        )}
+        {isOpen && <p className="manifesto-credit">{copy.credit}</p>}
       </div>
     </section>
   );

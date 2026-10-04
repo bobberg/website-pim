@@ -284,6 +284,49 @@
   background: var(--surface);
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.lang-switch:hover {
+  border-color: var(--ink);
+}
+
+@media (max-width: 899px) {
+  .site-header nav {
+    order: 3;
+  }
+}
+
+/* Narrow phones: stack the name and tag so the language switch fits beside them */
+@media (max-width: 479px) {
+  .brand a {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+@media (min-width: 900px) {
+  .site-header nav {
+    margin-left: auto;
+  }
+  .header-inner {
+    column-gap: 1rem;
+  }
+}
+
 /* ---------- Hero slideshow ---------- */
 
 .hero {
@@ -743,6 +786,44 @@
   margin: 1.5rem 0 0;
   color: var(--muted);
   font-style: italic;
+}
+
+/* ---------- Travels ---------- */
+
+.travels-intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.travels-text {
+  flex: 1 1 32rem;
+}
+
+.travels-text h2 {
+  margin-bottom: 1.25rem;
+}
+
+.travels-text p:last-child {
+  margin-bottom: 0;
+}
+
+.travels-map {
+  margin: 0;
+}
+
+.travels-map img {
+  width: 100%;
+  border-radius: var(--radius);
+}
+
+.travels-map figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.8125rem;
+  color: var(--muted);
 }
 
 /* ---------- Work ---------- */

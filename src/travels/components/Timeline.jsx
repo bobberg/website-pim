@@ -1,12 +1,28 @@
 import React, { useMemo } from "react";
 import ReactSlider from "react-slider";
-import { formatCount, formatMonth, formatMonthRange, monthIndexToDate } from "../photos";
+import {
+  formatCount,
+  formatMonth,
+  formatMonthRange,
+  monthIndexToDate,
+} from "../photos";
 
-const Timeline = ({ photos, bounds, range, tripCount, onChange, onAfterChange, onReset }) => {
+const Timeline = ({
+  photos,
+  bounds,
+  range,
+  tripCount,
+  onChange,
+  onAfterChange,
+  onReset,
+}) => {
   const [min, max] = bounds;
   const [start, end] = range;
   const firstYear = Math.floor(min / 12);
-  const years = Array.from({ length: (max + 1 - min) / 12 }, (_, i) => firstYear + i);
+  const years = Array.from(
+    { length: (max + 1 - min) / 12 },
+    (_, i) => firstYear + i,
+  );
   const labelEvery = Math.ceil(years.length / 12);
 
   const perMonth = useMemo(() => {
@@ -41,8 +57,14 @@ const Timeline = ({ photos, bounds, range, tripCount, onChange, onAfterChange, o
           {perMonth.map((count, i) => (
             <span
               key={i}
-              className={min + i >= start && min + i <= end ? "bar in-range" : "bar"}
-              style={{ height: count ? `${Math.max(8, Math.sqrt(count / peak) * 100)}%` : 0 }}
+              className={
+                min + i >= start && min + i <= end ? "bar in-range" : "bar"
+              }
+              style={{
+                height: count
+                  ? `${Math.max(8, Math.sqrt(count / peak) * 100)}%`
+                  : 0,
+              }}
             />
           ))}
         </div>
@@ -58,7 +80,9 @@ const Timeline = ({ photos, bounds, range, tripCount, onChange, onAfterChange, o
           onChange={onChange}
           onAfterChange={onAfterChange}
           ariaLabel={["From month", "To month"]}
-          ariaValuetext={(state) => formatMonth(monthIndexToDate(state.valueNow))}
+          ariaValuetext={(state) =>
+            formatMonth(monthIndexToDate(state.valueNow))
+          }
         />
         <ol
           className="timeline-years"

@@ -36,7 +36,9 @@ export const parsePhotoData = ({ places = [], photos = [], previews = "" }) => {
 };
 
 export const loadPhotos = async () => {
-  const response = await fetch(`${import.meta.env.BASE_URL}travels/photos.json`);
+  const response = await fetch(
+    `${import.meta.env.BASE_URL}travels/photos.json`,
+  );
   if (!response.ok)
     throw new Error(`photos.json could not be loaded (${response.status})`);
   return parsePhotoData(await response.json());
