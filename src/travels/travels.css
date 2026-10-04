@@ -1,0 +1,557 @@
+/* Tokens shared with perspectives.nl */
+:root {
+  --ink: #1b1b1a;
+  --text: #33332f;
+  --muted: #5c5c57;
+  --paper: #ffffff;
+  --surface: #f2f2f0;
+  --line: #e4dfd6;
+  --orange: #ff9c00;
+  --orange-deep: #ff6600;
+  --orange-ink: #a65200;
+  --serif: Georgia, "Times New Roman", Times, serif;
+  --sans:
+    system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+    sans-serif;
+  --gutter: clamp(1rem, 3vw, 2rem);
+  --radius: 4px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid var(--orange-deep);
+  outline-offset: 2px;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* Header, matching the perspectives.nl lockup */
+
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+  padding: 0.875rem var(--gutter);
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.brand-name {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+.brand-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--orange-ink);
+}
+
+.page-title {
+  padding-left: 1rem;
+  border-left: 1px solid var(--line);
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--ink);
+}
+
+/* Layout: map and timeline on the left, photos on the right */
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) clamp(320px, 30vw, 440px);
+  grid-template-rows: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "map panel"
+    "timeline panel";
+  min-height: 0;
+}
+
+.map-area {
+  grid-area: map;
+  position: relative;
+  min-height: 0;
+}
+
+.map {
+  position: absolute;
+  inset: 0;
+  background: var(--surface);
+  font-family: var(--sans);
+}
+
+/* A quiet basemap so the orange photo markers and routes carry the colour */
+.map .leaflet-tile-pane {
+  filter: grayscale(1) contrast(0.85) brightness(1.08);
+}
+
+.leaflet-tooltip {
+  padding: 0.3rem 0.6rem;
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: 0 1px 4px rgba(17, 17, 16, 0.2);
+  font: 600 0.875rem/1.4 var(--sans);
+  color: var(--ink);
+}
+
+.leaflet-touch .leaflet-bar {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.leaflet-bar a,
+.leaflet-touch .leaflet-bar a {
+  color: var(--ink);
+}
+
+.cluster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--paper);
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 1px 3px rgba(17, 17, 16, 0.35);
+  font: 700 0.8125rem/1 var(--sans);
+  font-variant-numeric: tabular-nums;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.app-status {
+  padding: var(--gutter);
+  color: var(--muted);
+}
+
+/* Timeline */
+
+.timeline {
+  --thumb: 24px;
+  grid-area: timeline;
+  padding: 1rem var(--gutter) 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.timeline-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.timeline-title {
+  font-family: var(--serif);
+  font-size: 1.375rem;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.timeline-count {
+  color: var(--muted);
+}
+
+.text-button {
+  padding: 0.25rem 0;
+  border: 0;
+  background: none;
+  font: 600 0.95rem var(--sans);
+  color: var(--orange-ink);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.timeline-head .text-button {
+  margin-left: auto;
+}
+
+.histogram {
+  display: flex;
+  align-items: flex-end;
+  gap: 1px;
+  height: 40px;
+  margin: 0 calc(var(--thumb) / 2);
+  border-bottom: 1px solid var(--line);
+}
+
+.bar {
+  flex: 1 1 0;
+  min-width: 0;
+  border-radius: 1px 1px 0 0;
+  background: var(--line);
+}
+
+.bar.in-range {
+  background: var(--orange);
+}
+
+.range-slider {
+  position: relative;
+  height: var(--thumb);
+  margin-top: 4px;
+  touch-action: pan-y;
+}
+
+.range-track {
+  top: calc(50% - 2px);
+  height: 4px;
+  border-radius: 2px;
+  background: var(--line);
+}
+
+.range-track-1 {
+  background: var(--ink);
+}
+
+.range-thumb {
+  top: 0;
+  width: var(--thumb);
+  height: var(--thumb);
+  border: 2px solid var(--ink);
+  border-radius: 50%;
+  background: var(--paper);
+  cursor: grab;
+}
+
+.range-thumb.active {
+  background: var(--ink);
+  cursor: grabbing;
+}
+
+.timeline-years {
+  display: grid;
+  grid-template-columns: repeat(var(--years), minmax(0, 1fr));
+  margin: 0.25rem calc(var(--thumb) / 2) 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.timeline-years li {
+  padding-left: 0.3rem;
+  border-left: 1px solid var(--line);
+}
+
+/* Photo panel */
+
+.panel {
+  grid-area: panel;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  border-left: 1px solid var(--line);
+}
+
+.panel-intro,
+.panel-empty {
+  color: var(--muted);
+}
+
+.panel-intro {
+  padding: var(--gutter);
+  border-bottom: 1px solid var(--line);
+}
+
+.viewer {
+  flex: none;
+  padding: var(--gutter) var(--gutter) 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.preview-frame {
+  display: flex;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  max-height: 30vh;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.preview-image,
+.pictogram-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.preview-image {
+  object-fit: contain;
+}
+
+.pictogram-image {
+  object-fit: cover;
+}
+
+.preview-image[data-state="loading"],
+.pictogram-image[data-state="loading"] {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .preview-image,
+  .pictogram-image {
+    transition: opacity 0.2s ease-out;
+  }
+}
+
+.preview-missing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.pictograms {
+  display: flex;
+  gap: 4px;
+  margin: 0 0 0.75rem;
+  padding: 3px 3px 6px;
+  overflow-x: auto;
+  list-style: none;
+  scrollbar-width: thin;
+}
+
+.pictograms li {
+  flex: none;
+}
+
+.pictogram {
+  position: relative;
+  display: block;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  border-radius: 2px;
+  background: var(--surface);
+  cursor: pointer;
+}
+
+.pictogram[aria-current="true"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 3px solid var(--ink);
+  box-shadow: inset 0 0 0 2px var(--paper);
+}
+
+.viewer-title {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--ink);
+}
+
+.viewer-date {
+  margin-top: 0.125rem;
+}
+
+.viewer-details {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.875rem 0 0;
+  font-size: 0.875rem;
+}
+
+.viewer-details dt {
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.viewer-details dd {
+  margin: 0;
+  color: var(--muted);
+}
+
+.viewer-details a {
+  font-weight: 600;
+  color: var(--orange-ink);
+  text-underline-offset: 3px;
+}
+
+.placement-note {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+.viewer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.viewer-position {
+  font-size: 0.95rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+}
+
+.pill-button {
+  min-height: 44px;
+  padding: 0.55rem 1.4rem;
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  background: var(--paper);
+  font: 600 0.95rem var(--sans);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.pill-button:hover:not(:disabled) {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.pill-button:disabled {
+  border-color: var(--line);
+  color: var(--muted);
+  cursor: default;
+}
+
+.trips {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 1.25rem var(--gutter) var(--gutter);
+}
+
+.trips-title {
+  margin-bottom: 0.5rem;
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--ink);
+}
+
+.trip-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.trip-row {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.625rem 0.75rem;
+  border: 0;
+  border-top: 1px solid var(--line);
+  background: none;
+  font: inherit;
+  text-align: left;
+  color: inherit;
+  cursor: pointer;
+  scroll-margin: 0.75rem;
+}
+
+.trip-row:hover {
+  background: var(--surface);
+}
+
+.trip-row[aria-current="true"] {
+  background: var(--surface);
+  box-shadow: inset 3px 0 0 var(--ink);
+}
+
+.trip-title {
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.trip-meta {
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.more-button {
+  display: block;
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+/* Narrow screens: stack map, timeline and photos, and let the page scroll */
+
+@media (max-width: 900px) {
+  .app {
+    display: block;
+    height: auto;
+  }
+
+  .layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .map-area {
+    height: 55vh;
+    min-height: 320px;
+  }
+
+  .panel {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .trips {
+    overflow: visible;
+  }
+}

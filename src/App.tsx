@@ -16,6 +16,7 @@ const NavItems = [
   { href: "#manifesto", label: "Manifesto" },
   { href: "#work", label: "Work" },
   { href: "#about", label: "About" },
+  { href: "/travels/", label: "Travels" },
   { href: "#contact", label: "Contact" },
 ];
 
