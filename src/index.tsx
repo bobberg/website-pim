@@ -4,8 +4,8 @@ import "./css/index.css";
 import App from "./App";
 import { LangContext, type Lang } from "./i18n";
 
-// nl/index.html sets <html lang="nl">; both pages share this entry
-const lang: Lang = document.documentElement.lang === "nl" ? "nl" : "en";
+// index.html (Dutch) and en/index.html share this entry; <html lang> picks the language
+const lang: Lang = document.documentElement.lang === "en" ? "en" : "nl";
 
 const container = document.getElementById("root");
 const root = createRoot(container!);
